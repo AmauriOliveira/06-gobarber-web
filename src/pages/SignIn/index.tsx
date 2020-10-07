@@ -1,4 +1,5 @@
 import React from 'react';
+import { FiLogIn } from 'react-icons/fi';
 
 import logoImg from '../../assets/logo.svg';
 
@@ -16,7 +17,10 @@ const SignIn: React.FunctionComponent = () => (
 
         <a href="forgot">Esqueci minha senha</a>
 
-        <a href="forgot">Criar conta</a>
+        <a href="forgot">
+          <FiLogIn />
+          Criar conta
+        </a>
       </form>
     </Content>
     <Background />
