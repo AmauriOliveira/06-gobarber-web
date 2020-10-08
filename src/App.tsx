@@ -1,11 +1,12 @@
 import React from 'react';
 
 import GlobalStyle from './styles/global';
-import Sign from './pages/SignIn';
+// import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
 
 const App: React.FunctionComponent = () => (
   <>
-    <Sign />
+    <SignUp />
     <GlobalStyle />
   </>
 );
