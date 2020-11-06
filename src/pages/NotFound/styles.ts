@@ -1,58 +1,54 @@
 import styled, { keyframes } from 'styled-components';
+
 import { shade } from 'polished';
 
-import signUpBackgroundImg from '../../assets/sign-up-background.png';
+import signInBackgroundImg from '../../assets/sign-up-background.png';
 
 export const Container = styled.div`
   height: 100vh;
   display: flex;
   align-items: stretch;
 `;
-export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 700px;
+
+const appearFromLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 `;
 
-const appearFromRight = keyframes`
-    from {
-      opacity: 0;
-      transform: translateX(+50px);
-    }
-    to{
-      opacity: 1;
-      transform: translateX(0);
-    }
-`;
-export const AnimationContainer = styled.div`
+export const Content = styled.div`
+  animation: ${appearFromLeft} 1s;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  animation: ${appearFromRight} 1s;
+  place-content: center;
+  width: 100%;
+  max-width: 700px;
   form {
     margin: 80px 0;
     width: 340px;
     text-align: center;
     h1 {
-      margin: 24px;
+      margin-bottom: 24px;
     }
     a {
-      color: #f4ede8;
+      color: #000;
       display: block;
       margin-top: 24px;
       text-decoration: none;
       transition: color 0.2s;
       &:hover {
-        color: ${shade(0.2, '#f4ede8')};
+        color: ${shade(0.2, '#000')};
       }
     }
   }
   > a {
-    color: #ff9000;
+    color: #6600cc;
     display: block;
     margin-top: 24px;
     text-decoration: none;
@@ -60,16 +56,16 @@ export const AnimationContainer = styled.div`
     display: flex;
     align-items: center;
     svg {
-      margin-right: 10px;
+      margin-right: 16px;
     }
     &:hover {
-      color: ${shade(0.2, '#ff9000')};
+      color: ${shade(0.2, '#6600cc')};
     }
   }
 `;
 
 export const Background = styled.div`
   flex: 1;
-  background: url(${signUpBackgroundImg}) no-repeat center;
+  background: url(${signInBackgroundImg}) no-repeat center;
   background-size: cover;
 `;
